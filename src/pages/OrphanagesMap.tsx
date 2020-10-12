@@ -28,7 +28,7 @@ function OrphanegeMap(){
 
            <Map 
                 center={[-23.9720619,-46.3551055]}
-                zoom={15}
+                zoom={15.75}
                 style={
                     {
                         width: '100%',
@@ -36,7 +36,9 @@ function OrphanegeMap(){
                     }
                 }
            >
-               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+               <TileLayer 
+                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} 
+               />
            </Map>    
 
             <Link to="" className="createOrphanage">
